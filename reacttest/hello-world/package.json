@@ -1,6 +1,6 @@
 {
   "name": "hello-world",
-  "homepage": "https://freebreaker.github.io/react/build",
+  "homepage": "https://freebreaker.github.io/react/reacttest/hello-world/build",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
