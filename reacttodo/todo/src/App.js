@@ -44,7 +44,7 @@ class App extends Component {
       <div className='App'>
         <h1>我的todo</h1>
           <div className="inputWarpper">
-            <TodoInput content={this.state.newTodo}/>
+            <TodoInput content={this.state.newTodo} />
           </div>
 
         <ol>
