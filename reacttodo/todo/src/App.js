@@ -26,25 +26,27 @@ class App extends Component {
     this.state={
       newTodo:'',
       todoList:[
-        {id:1,title:'第一个待办'},
-        {id:2, title:'第二个待办'}
+        // {id:1,title:'第一个待办'},
+        // {id:2, title:'第二个待办'}
       ]
     }
   }
 
   render(){
     let todos=this.state.todoList.map((item,index)=>{
-      return (<li>
+      return (<li  key={index}>
                <TodoItem todo={item}/>
             </li>)
     })
+
+    console.log(todos)
 
 
     return (
       <div className='App'>
         <h1>我的todo</h1>
           <div className="inputWarpper">
-            <TodoInput content={this.state.newTodo} onSubmit={this.addTodo} />
+            <TodoInput content={this.state.newTodo} onSubmit={this.addTodo.bind(this)} />
           </div>
 
         <ol>
@@ -56,11 +58,31 @@ class App extends Component {
 
 
 
-  addTodo(){
-    console.log('我得添加一个todo了')
+  // addTodo(){
+  //   console.log('我得添加一个todo了')
+  // }
+   addTodo(event){
+     console.log('我得添加一个todo了')
+      this.state.todoList.push({
+        id: idMaker(),
+        title: event.target.value,
+        status: null,
+        deleted: false
+      })
+      this.setState({
+        newTodo: '',
+        todoList: this.state.todoList
+      })
   }
 
 
+}
+
+
+let id=0
+function idMaker() {
+  id+=1
+  return id
 }
 
 export default App;
