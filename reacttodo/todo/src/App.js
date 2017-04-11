@@ -6,7 +6,8 @@ import TodoItem from './TodoItem.js';
 import 'normalize.css';
 import "./reset.css";
 import "./App.css";
-import "./TodoItem.css"
+import "./TodoItem.css";
+import "./TodoInput.css"
 
 class App extends Component {
   // render() {

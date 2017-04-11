@@ -2,7 +2,8 @@ import React,{Component} from 'react';
 
 class TodoInput extends React.Component{
     render(){
-        return <input type="text" value={this.props.content} 
+        return <input type="text" value={this.props.content}
+         className="TodoInput" 
         onChange={this.changeTitle.bind(this)} 
         onKeyPress={this.submit.bind(this)}/>
         
@@ -21,7 +22,7 @@ class TodoInput extends React.Component{
 
 
 
-     toggle(e, todo){
+    toggle(e, todo){
          todo.status = todo.status === 'completed' ? '' : 'completed'
          this.setState(this.state) 
   }
