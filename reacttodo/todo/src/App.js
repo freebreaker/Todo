@@ -5,7 +5,8 @@ import TodoInput from './TodoInput.js';
 import TodoItem from './TodoItem.js';
 import 'normalize.css';
 import "./reset.css";
-import "./App.css"
+import "./App.css";
+import "./TodoItem.css"
 
 class App extends Component {
   // render() {
@@ -54,7 +55,7 @@ class App extends Component {
             onSubmit={this.addTodo.bind(this)} />
           </div>
 
-        <ol>
+        <ol className="todoList">
           {todos}
         </ol>
       </div>  
