@@ -18,5 +18,12 @@ class TodoInput extends React.Component{
     changeTitle(e){
       this.props.onChange(e)
   }
+
+
+
+     toggle(e, todo){
+         todo.status = todo.status === 'completed' ? '' : 'completed'
+         this.setState(this.state) 
+  }
 }
 export default TodoInput
