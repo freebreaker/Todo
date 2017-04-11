@@ -24,7 +24,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state={
-      newTodo:'test',
+      newTodo:'',
       todoList:[
         {id:1,title:'第一个待办'},
         {id:2, title:'第二个待办'}
@@ -44,7 +44,7 @@ class App extends Component {
       <div className='App'>
         <h1>我的todo</h1>
           <div className="inputWarpper">
-            <TodoInput content={this.state.newTodo} />
+            <TodoInput content={this.state.newTodo} onSubmit={this.addTodo} />
           </div>
 
         <ol>
@@ -52,6 +52,12 @@ class App extends Component {
         </ol>
       </div>  
     )
+  }
+
+
+
+  addTodo(){
+    console.log('我得添加一个todo了')
   }
 
 
