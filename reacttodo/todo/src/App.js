@@ -49,7 +49,7 @@ class App extends Component {
 
     return (
       <div className='App'>
-        <h1>我的todo</h1>
+        <h1>我的TODO</h1>
           <div className="inputWarpper">
             <TodoInput content={this.state.newTodo}
             onChange={this.changeTitle.bind(this)} 
