@@ -6,7 +6,10 @@
   "dependencies": {
     "normalize.css": "^6.0.0",
     "react": "^15.5.3",
-    "react-dom": "^15.5.3"
+    "react-dom": "^15.5.3",
+    "react-sortable": "^1.2.0",
+    "sortable.js": "^0.3.0",
+    "sortablejs": "^1.5.1"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"

@@ -7,7 +7,9 @@ import 'normalize.css';
 import "./reset.css";
 import "./App.css";
 import "./TodoItem.css";
-import "./TodoInput.css"
+import "./TodoInput.css";
+import Sortable from 'sortablejs'
+
 
 class App extends Component {
   // render() {
@@ -36,7 +38,7 @@ class App extends Component {
 
   render(){
     let todos=this.state.todoList.filter((item)=> !item.deleted).map((item,index)=>{
-      return (<li  key={index}>
+      return (<li key={index}>
                
                <TodoItem todo={item} onToggle={this.toggle.bind(this)} 
                onDelete={this.delete.bind(this)}/>
@@ -56,12 +58,20 @@ class App extends Component {
             onSubmit={this.addTodo.bind(this)} />
           </div>
 
-        <ol className="todoList">
+        <ol className="todoList" id='sort'>
           {todos}
         </ol>
       </div>  
     )
   }
+
+  componentDidMount() {
+      var el = document.getElementById('sort');
+         var sortable = Sortable.create(el,{
+              animation: 100
+         });
+      }
+
 
 
        delete(event, todo){
@@ -82,6 +92,7 @@ class App extends Component {
         todoList: this.state.todoList
       })
     }
+
 
   // addTodo(){
   //   console.log('我得添加一个todo了')
@@ -109,5 +120,8 @@ function idMaker() {
   id +=1
   return id
 }
+
+
+
 
 export default App;
