@@ -9,7 +9,24 @@ import "./App.css";
 import "./TodoItem.css";
 import "./TodoInput.css";
 import Sortable from 'sortablejs';
-import * as localStore from './localStore'
+import * as localStore from './localStore';
+import AV from 'leancloud-storage'
+
+
+var APP_ID = '4TV4fC0CdYNtJRqctElSsHxY-gzGzoHsz';
+var APP_KEY = '71G2uRmzvFruTDjwxmQHyroR';
+AV.init({
+  appId: APP_ID,
+  appKey: APP_KEY
+});
+
+var TestObject = AV.Object.extend('TestObject');
+var testObject = new TestObject();
+testObject.save({
+  words: 'Hello World!'
+}).then(function(object) {
+  alert('LeanCloud Rocks!');
+})
 
 
 class App extends Component {
