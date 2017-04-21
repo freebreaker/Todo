@@ -9,24 +9,15 @@ import "./App.css";
 import "./TodoItem.css";
 import "./TodoInput.css";
 import Sortable from 'sortablejs';
-import * as localStore from './localStore';
-import AV from 'leancloud-storage'
+// import * as localStore from './localStore';
 
-
-var APP_ID = '4TV4fC0CdYNtJRqctElSsHxY-gzGzoHsz';
-var APP_KEY = '71G2uRmzvFruTDjwxmQHyroR';
-AV.init({
-  appId: APP_ID,
-  appKey: APP_KEY
-});
-
-var TestObject = AV.Object.extend('TestObject');
-var testObject = new TestObject();
-testObject.save({
-  words: 'Hello World!'
-}).then(function(object) {
-  alert('LeanCloud Rocks!');
-})
+// var TestObject = AV.Object.extend('TestObject');
+// var testObject = new TestObject();
+// testObject.save({
+//   words: 'Hello bigbig!'
+// }).then(function(object) {
+//   alert('LeanCloud Rocks!');
+// })
 
 
 class App extends Component {
@@ -51,7 +42,8 @@ class App extends Component {
       //   // {id:1,title:'第一个待办'},
       //   // {id:2, title:'第二个待办'}
       // ]
-      todoList: localStore.load('todoList') || []
+      // todoList: localStore.load('todoList') || []
+      todoList:[]
     }
   }
 
@@ -91,7 +83,7 @@ class App extends Component {
          });
       }
   componentDidUpdate(){
-    localStore.save('todoList',this.state.todoList)
+    // localStore.save('todoList',this.state.todoList)`
   }
 
 
