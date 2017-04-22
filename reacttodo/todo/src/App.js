@@ -9,6 +9,7 @@ import "./App.css";
 import "./TodoItem.css";
 import "./TodoInput.css";
 import Sortable from 'sortablejs';
+import UserDialog from './UserDialog'
 // import * as localStore from './localStore';
 
 // var TestObject = AV.Object.extend('TestObject');
@@ -72,6 +73,7 @@ class App extends Component {
         <ol className="todoList" id='sort'>
           {todos}
         </ol>
+        <UserDialog />
       </div>  
     )
   }
